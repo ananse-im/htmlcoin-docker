@@ -28,5 +28,5 @@ COPY --from=build /HTMLCOIN/src/htmlcoin-cli /bin/htmlcoin-cli
 
 LABEL version="2.0.0.2"
 
-ENTRYPOINT ["/bin/htmlcoind"]
+ENTRYPOINT ["/HTMLCOIN/htmlcoind"]
 CMD ["--help"]
