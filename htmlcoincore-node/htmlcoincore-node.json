@@ -1,0 +1,29 @@
+{
+  "network": "testnet",
+  "port": 3001,
+  "services": [
+    "htmlcoin-api",
+    "htmlcoind",
+    "web"
+  ],
+  "servicesConfig": {
+    "htmlcoind": {
+      "spawn": {
+        "datadir": "/home/node/mynode-data",
+        "exec": "/bin/htmlcoind"
+      }
+    },
+    "htmlcoin-api": {
+      "db": {
+        "host": "mongo-dev",
+        "port": "27017",
+        "database": "htmlcoin-api",
+        "user": "",
+        "password": ""
+      },
+      "erc20": {
+        "updateFromBlockHeight": 0
+      }
+    }
+  }
+}
