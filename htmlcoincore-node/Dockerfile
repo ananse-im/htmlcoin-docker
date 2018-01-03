@@ -1,4 +1,4 @@
-FROM ananseim/htmlcoin-docker
+FROM ananseim/htmlcoin-docker:master-bitcore
 #LABEL maintainer="https://github.com/senagbe"
 
 RUN apt-get -y update
