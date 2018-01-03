@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: rc-htmlcoin-dev
+  name: rc-htmlcoincore-dev
   # these labels can be applied automatically
   # from the labels in the pod template if not set
   labels:
-    app: htmlcoin-dev
+    app: rc-htmlcoincore-dev
     role: service
 spec:
   # this replicas value is default
@@ -20,22 +20,22 @@ spec:
   template:
     metadata:
       labels:
-        app: htmlcoin-dev
+        app: rc-htmlcoincore-dev
         role: service
     spec:
       containers:
-      - name: htmlcoin
-        image: ananseim/htmlcoin-docker:latest
+      - name: htmlcoincore-api
+        image: ananseim/htmlcoincore-api-docker:latest
         imagePullPolicy: Always
         #resources:
           #requests:
             #cpu: 100m
             #memory: 100Mi
         ports:
-        - containerPort: 14889
+        - containerPort: 3001
           name: http
 #        env:
 #          - name: http_port
 #            value:  "4889"
 #        command: ["/bin/htmlcoind && /bin/htmlcoin-cli"]
-        args: ["-testnet","-server","-debug","-printtoconsole","-rpcuser=user","-rpcpassword=password","-rest=1"]
+#        args: ["-testnet","-server","-debug","-printtoconsole","-rpcuser=user","-rpcpassword=password","-rest=1"]

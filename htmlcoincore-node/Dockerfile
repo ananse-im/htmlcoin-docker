@@ -4,6 +4,17 @@ FROM ananseim/htmlcoin-docker
 RUN apt-get -y update
 RUN apt-get -y install curl
 RUN apt-get -y install libzmq3-dev
+RUN apt-get -y install wget
+
+# install zeromq
+
+RUN wget http://download.zeromq.org/zeromq-4.1.4.tar.gz
+RUN tar -xvf zeromq-4.1.4.tar.gz
+RUN cd zeromq-4.1.4
+RUN ./autogen.sh
+RUN ./configure && make check
+RUN make install
+RUN ldconfig
 
 # from docker-node
 

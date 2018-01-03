@@ -15,7 +15,7 @@
     },
     "htmlcoin-api": {
       "db": {
-        "host": "mongo-dev",
+        "host": "svc-mongo",
         "port": "27017",
         "database": "htmlcoin-api",
         "user": "",

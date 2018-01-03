@@ -3,7 +3,7 @@ kind: ReplicationController
 metadata:
   labels:
     name: mongo
-  name: mongo-controller
+  name: rc-mongo
 spec:
   replicas: 1
   template:
