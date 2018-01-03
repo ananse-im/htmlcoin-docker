@@ -24,7 +24,7 @@ COPY --from=build /HTMLCOIN/src/htmlcoind /bin/htmlcoind
 COPY --from=build /HTMLCOIN/src/htmlcoin-tx /bin/htmlcoin-tx
 COPY --from=build /HTMLCOIN/src/htmlcoin-cli /bin/htmlcoin-cli
 
-LABEL version="2.0.0.2"
+LABEL version="master-bitcore"
 
 EXPOSE 4889
 EXPOSE 14889
