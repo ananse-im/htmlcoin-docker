@@ -3,6 +3,7 @@
   "port": 3001,
   "services": [
     "htmlcoin-api",
+    "htmlcoin-explorer",
     "htmlcoind",
     "web"
   ],
@@ -12,6 +13,11 @@
         "datadir": "/home/node/mynode-data",
         "exec": "/bin/htmlcoind"
       }
+    },
+    "htmlcoin-explorer": {
+      "apiPrefix": "htmlcoin-api",
+      "routePrefix": "htmlcoin-explorer",
+      "nodemapLink": "http://explorer.htmlcoin.com/en/nodemap"
     },
     "htmlcoin-api": {
       "routePrefix": "htmlcoin-api",
