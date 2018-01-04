@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name: htmlcoincore-api
-        image: ananseim/htmlcoincore-api-docker:latest
+        image: ananseim/htmlcoincore-api-docker:master-bitcore
         imagePullPolicy: Always
         #resources:
           #requests:

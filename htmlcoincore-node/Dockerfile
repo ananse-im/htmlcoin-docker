@@ -79,18 +79,18 @@ RUN groupadd --gid 1000 node \
 
 # Build htmlcoincore-node
 
-USER node
-RUN mkdir /home/node/.npm-global
-ENV PATH=/home/node/.npm-global/bin:$PATH
-ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
+#USER node
+#RUN mkdir /home/node/.npm-global
+#ENV PATH=/home/node/.npm-global/bin:$PATH
+#ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 
-RUN npm install -g htmlcoincore-node
+RUN npm install -g htmlcoincore-node --unsafe
 
-RUN mkdir /home/node/mynode-data
+#RUN mkdir /home/node/mynode-data
 
-RUN htmlcoincore-node create -d /home/node/mynode-data /home/node/mynode
-WORKDIR /home/node/mynode
+RUN htmlcoincore-node create -d mynode-data mynode
+WORKDIR mynode
 RUN htmlcoincore-node install htmlcoin-api
-COPY htmlcoincore-node.json /home/node/mynode/htmlcoincore-node.json
+COPY htmlcoincore-node.json mynode/htmlcoincore-node.json
 
 ENTRYPOINT ["htmlcoincore-node","start"]
