@@ -24,8 +24,8 @@ spec:
         role: service
     spec:
       containers:
-      - name: htmlcoincore-api
-        image: ananseim/htmlcoincore-api-docker:latest
+      - name: htmlcoincore-node
+        image: ananseim/htmlcoincore-node:latest
         imagePullPolicy: Always
         #resources:
           #requests:
@@ -33,6 +33,8 @@ spec:
             #memory: 100Mi
         ports:
         - containerPort: 3001
+          name: http
+        - containerPort: 14889
           name: http
 #        env:
 #          - name: http_port

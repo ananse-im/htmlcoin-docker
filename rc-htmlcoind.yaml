@@ -25,7 +25,7 @@ spec:
     spec:
       containers:
       - name: htmlcoin
-        image: ananseim/htmlcoin-docker:latest
+        image: ananseim/htmlcoin:latest
         imagePullPolicy: Always
         #resources:
           #requests:
