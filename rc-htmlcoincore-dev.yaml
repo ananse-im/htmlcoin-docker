@@ -35,7 +35,7 @@ spec:
         - containerPort: 3001
           name: http
         - containerPort: 14889
-          name: http
+          name: http14889
 #        env:
 #          - name: http_port
 #            value:  "4889"
