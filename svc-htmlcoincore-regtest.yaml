@@ -8,9 +8,6 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  -  port: 14889
-     name: http14889
-     targetPort: 14889
   -  port: 3001
      name: http3001
      targetPort: 3001
