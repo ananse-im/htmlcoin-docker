@@ -5,7 +5,7 @@ metadata:
   # these labels can be applied automatically
   # from the labels in the pod template if not set
   labels:
-    app: rc-htmlcoincore-regtest
+    app: htmlcoincore-regtest
     role: service
 spec:
   # this replicas value is default
@@ -20,11 +20,11 @@ spec:
   template:
     metadata:
       labels:
-        app: rc-htmlcoincore-regtest
+        app: htmlcoincore-regtest
         role: service
     spec:
       containers:
-      - name: htmlcoincore-node
+      - name: htmlcoincore-services
         image: ananseim/htmlcoincore-services:regtest
         imagePullPolicy: Always
         #resources:
