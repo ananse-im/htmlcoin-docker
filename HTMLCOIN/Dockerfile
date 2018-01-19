@@ -10,14 +10,18 @@ RUN add-apt-repository ppa:bitcoin/bitcoin
 RUN apt-get -y update
 RUN apt-get -y install libdb4.8-dev libdb4.8++-dev
 
+# enable zeromq
+RUN apt-get -y install libzmq3-dev
+
 RUN apt-get -y install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
 
 RUN git clone -b "master-bitcore" https://github.com/HTMLCOIN/HTMLCOIN --recursive
 WORKDIR HTMLCOIN
+RUN git submodule update --init --recursive
 
 # Note autogen will prompt to install some more dependencies if needed
 RUN ./autogen.sh
-RUN ./configure 
+RUN ./configure
 RUN make -j2
 
 COPY --from=build /HTMLCOIN/src/htmlcoind /bin/htmlcoind
