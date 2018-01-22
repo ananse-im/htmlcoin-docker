@@ -14,7 +14,7 @@
       }
     },
     "htmlcoin-api": {
-      "routePrefix": "htmlcoin-api",
+      "routePrefix": "api",
       "db": {
         "host": "svc-mongo",
         "port": "27017",
