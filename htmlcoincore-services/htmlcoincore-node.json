@@ -15,12 +15,12 @@
       }
     },
     "htmlcoin-explorer": {
-      "apiPrefix": "htmlcoin-api",
-      "routePrefix": "htmlcoin-explorer",
+      "apiPrefix": "api",
+      "routePrefix": "explorer",
       "nodemapLink": "http://explorer.htmlcoin.com/en/nodemap"
     },
     "htmlcoin-api": {
-      "routePrefix": "htmlcoin-api",
+      "routePrefix": "api",
       "db": {
         "host": "svc-mongo",
         "port": "27017",

@@ -1,4 +1,4 @@
-FROM ananseim/htmlcoin
+FROM ananseim/htmlcoin:bitcore
 
 RUN apt-get -y update
 RUN apt-get -y install curl
