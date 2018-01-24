@@ -1,0 +1,36 @@
+{
+  "network": "regtest",
+  "port": 3001,
+  "services": [
+    "htmlcoin-api",
+    "htmlcoin-explorer",
+    "htmlcoind",
+    "web"
+  ],
+  "servicesConfig": {
+    "htmlcoind": {
+      "spawn": {
+        "datadir": "/home/node/htmlcoincore-node/api/data",
+        "exec": "/bin/htmlcoind"
+      }
+    },
+    "htmlcoin-explorer": {
+      "apiPrefix": "api",
+      "routePrefix": "explorer",
+      "nodemapLink": "http://explorer.htmlcoin.com/en/nodemap"
+    },
+    "htmlcoin-api": {
+      "routePrefix": "api",
+      "db": {
+        "host": "docker.for.mac.localhost",
+        "port": "27017",
+        "database": "regtest-api",
+        "user": "",
+        "password": ""
+      },
+      "erc20": {
+        "updateFromBlockHeight": 0
+      }
+    }
+  }
+}
