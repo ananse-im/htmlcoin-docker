@@ -31,6 +31,17 @@
       "erc20": {
         "updateFromBlockHeight": 0
       }
+    },
+    "htmlcoin-notification": {
+      "routePrefix": "notification",
+      "db": {
+        "host": "svc-mongo",
+        "port": "27017",
+        "database": "htmlcoin-notification",
+        "user": "",
+        "password": ""
+      },
+      "firebaseConfigPath": "/home/node/htmlcoin-secret/htmlcoin-wallet-firebase-adminsdk.json"
     }
   }
 }

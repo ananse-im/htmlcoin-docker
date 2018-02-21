@@ -31,6 +31,10 @@ spec:
           #requests:
             #cpu: 100m
             #memory: 100Mi
+        volumeMounts:
+        - name: htmlcoin-secret
+          mountPath: "/home/node/htmlcoin-secret"
+          readOnly: true
         ports:
         - containerPort: 3001
           name: http
@@ -41,3 +45,7 @@ spec:
 #            value:  "4889"
 #        command: ["/bin/htmlcoind && /bin/htmlcoin-cli"]
 #        args: ["-testnet","-server","-debug","-printtoconsole","-rpcuser=user","-rpcpassword=password","-rest=1"]
+      volumes:
+      - name: htmlcoin-secret
+        secret:
+          secretName: htmlcoin-secret

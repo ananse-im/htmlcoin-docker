@@ -4,6 +4,7 @@
   "services": [
     "htmlcoin-api",
     "htmlcoin-explorer",
+    "htmlcoin-notification",
     "htmlcoind",
     "web"
   ],
@@ -31,6 +32,17 @@
       "erc20": {
         "updateFromBlockHeight": 0
       }
+    },
+    "htmlcoin-notification": {
+      "routePrefix": "notification",
+      "db": {
+        "host": "docker.for.mac.localhost",
+        "port": "27017",
+        "database": "regtest-notification",
+        "user": "",
+        "password": ""
+      },
+      "firebaseConfigPath": "/home/node/htmlcoincore-node/htmlcoin-wallet-firebase-adminsdk.json"
     }
   }
 }

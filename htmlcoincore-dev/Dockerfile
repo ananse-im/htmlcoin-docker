@@ -2,8 +2,10 @@
 FROM ananseim/htmlcoincore-deps
 
 USER root
-RUN chown node:node /home/node && \
-    chmod 777 /home/node
+RUN apt-get -y install vim
+
+RUN chown -R node:node /home/node && \
+    chmod -R 777 /home/node
 USER node
 
 WORKDIR /home/node/
@@ -14,6 +16,7 @@ RUN node ./bin/htmlcoincore-node create api
 WORKDIR /home/node/htmlcoincore-node/api
 RUN node /home/node/htmlcoincore-node/bin/htmlcoincore-node install htmlcoin-api
 RUN node /home/node/htmlcoincore-node/bin/htmlcoincore-node install htmlcoin-explorer
+RUN node /home/node/htmlcoincore-node/bin/htmlcoincore-node install htmlcoin-notification
 
 COPY htmlcoincore-node.json /home/node/htmlcoincore-node/api/htmlcoincore-node.json
 COPY htmlcoin.conf /home/node/htmlcoincore-node/api/data/htmlcoin.conf
