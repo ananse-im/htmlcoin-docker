@@ -4,6 +4,7 @@
   "services": [
     "htmlcoin-api",
     "htmlcoin-explorer",
+    "htmlcoin-notification",
     "htmlcoind",
     "web"
   ],
