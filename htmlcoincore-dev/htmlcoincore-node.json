@@ -4,13 +4,14 @@
   "services": [
     "htmlcoin-api",
     "htmlcoin-explorer",
+    "htmlcoin-notification",
     "htmlcoind",
     "web"
   ],
   "servicesConfig": {
     "htmlcoind": {
       "spawn": {
-        "datadir": "/home/node/mynode-data",
+        "datadir": "/home/node/htmlcoincore-node/api/data",
         "exec": "/bin/htmlcoind"
       }
     },
@@ -22,9 +23,9 @@
     "htmlcoin-api": {
       "routePrefix": "api",
       "db": {
-        "host": "svc-mongo",
+        "host": "docker.for.mac.localhost",
         "port": "27017",
-        "database": "htmlcoin-api",
+        "database": "regtest-api",
         "user": "",
         "password": ""
       },
@@ -35,13 +36,13 @@
     "htmlcoin-notification": {
       "routePrefix": "notification",
       "db": {
-        "host": "svc-mongo",
+        "host": "docker.for.mac.localhost",
         "port": "27017",
-        "database": "htmlcoin-notification",
+        "database": "regtest-notification",
         "user": "",
         "password": ""
       },
-      "firebaseConfigPath": "/home/node/htmlcoin-secret/htmlcoin-wallet-firebase-adminsdk.json"
+      "firebaseConfigPath": "/home/node/htmlcoincore-node/htmlcoin-wallet-firebase-adminsdk.json"
     }
   }
 }
