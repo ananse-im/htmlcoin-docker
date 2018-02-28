@@ -11,4 +11,4 @@ RUN htmlcoincore-node install htmlcoin-notification
 
 COPY htmlcoincore-node.json /home/node/mynode/htmlcoincore-node.json
 
-ENTRYPOINT ["htmlcoincore-node","start"]
+ENTRYPOINT ["htmlcoincore-node", "start", "-c", "/home/node/mynode"]

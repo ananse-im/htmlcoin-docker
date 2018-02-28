@@ -35,6 +35,9 @@ spec:
         - name: htmlcoin-secret
           mountPath: "/home/node/htmlcoin-secret"
           readOnly: true
+        - name: htmlcoincore-regtest-persistent-storage
+          mountPath: "/home/node/mynode-data"
+          readOnly: false
         ports:
         - containerPort: 3001
           name: http
@@ -45,7 +48,14 @@ spec:
 #            value:  "4889"
 #        command: ["/bin/htmlcoind && /bin/htmlcoin-cli"]
 #        args: ["-testnet","-server","-debug","-printtoconsole","-rpcuser=user","-rpcpassword=password","-rest=1"]
+      securityContext:
+        fsGroup: 101
       volumes:
       - name: htmlcoin-secret
         secret:
           secretName: htmlcoin-secret
+      - name: htmlcoincore-regtest-persistent-storage
+        gcePersistentDisk:
+        # This disk must already exist.
+          pdName: html-regtest-disk
+          fsType: ext4
