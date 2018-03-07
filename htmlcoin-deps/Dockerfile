@@ -1,8 +1,7 @@
-FROM ananseim/htmlcoin:bitcore
+FROM htmlcoin/htmlcoin:bitcore
 
 RUN apt-get -y update
-RUN apt-get -y install curl
-RUN apt-get -y install wget
+RUN apt-get -y install curl wget vim
 
 # install zeromq
 

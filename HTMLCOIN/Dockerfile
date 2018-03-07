@@ -1,5 +1,4 @@
 FROM ubuntu:xenial as build
-LABEL maintainer="https://github.com/senagbe"
 
 # Build htmlcoin
 
@@ -15,8 +14,9 @@ RUN apt-get -y install libzmq3-dev
 
 RUN apt-get -y install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
 
-RUN git clone -b "v2.0.0.3" https://github.com/HTMLCOIN/HTMLCOIN --recursive
+RUN git clone -b "master-bitcore" https://github.com/HTMLCOIN/HTMLCOIN --recursive
 WORKDIR HTMLCOIN
+RUN git submodule update --init --recursive
 
 # Note autogen will prompt to install some more dependencies if needed
 RUN ./autogen.sh
